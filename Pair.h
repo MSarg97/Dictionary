@@ -8,7 +8,7 @@ template <typename Key, typename Value>
 class Pair
 {
 public:
-	Pair() {} //Default constructor
+	Pair() = default; //Default constructor
 
 	Pair(Key k, Value val) { key = k; value = val; } //Initializer constructor
 	
@@ -23,8 +23,8 @@ public:
 	Value getValue() { return value; }
 
 private:
-	Key key;
-	Value value;
+	Key key { };
+	Value value { };
 
 }; //End of Pair class
 
