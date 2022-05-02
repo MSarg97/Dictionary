@@ -22,7 +22,7 @@ public:
 
 	size_t size() { return list->size(); } //Return list size
 
-	Value operator[](int num); //Subscript operator overloading
+	Value& operator[](int num); //Subscript operator overloading
 
 	~ListDictionary() { delete list; } //Destructor
 
@@ -67,7 +67,7 @@ Value ListDictionary<Key, Value>::find(const Key& k)
 }
 
 template <typename Key, typename Value>
-Value ListDictionary<Key, Value>::operator[](int num)
+Value& ListDictionary<Key, Value>::operator[](int num)
 {
 	if (num < 0 && num > size())
 		std::cout << "Index out of bound!\n";
